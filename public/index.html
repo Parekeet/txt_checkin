@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>Auth App</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+  <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
+  <script src="/js/jwt-decode.2.0.1.js"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+
+</head>
+<body>
+  <div class="container-fluid">
+    <header ng-controller="NavbarController as vm">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <a ui-sref="welcome" class="navbar-brand">TXT</a>
+          <div class="pull-right">
+            <button ng-show="vm.authService.isLoggedIn();" ui-sref="library" type="button" class="btn btn-default navbar-btn">Library</button>
+            <button ng-show="vm.authService.isLoggedIn();" ui-sref="profile" type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-cog"></i> Profile</button>
+            <button ng-hide="vm.authService.isLoggedIn();" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Check In</button>
+            <button ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="content" ui-view>
+      <!-- ui-router (aka ui.router) inserts templates here -->
+    </main>
+  </div> <!-- div.container-fluid -->
+
+
+  <script src="/js/app.module.js"></script>
+  <script src="/js/app.routes.js"></script>
+  <script src="/js/token.service.js"></script>
+  <script src="/js/auth.service.js"></script>
+  <script src="/js/user.service.js"></script>
+  <script src="/js/signin.controller.js"></script>
+  <script src="/js/profile.controller.js"></script>
+  <script src="/js/library.controller.js"></script>
+  <script src="/js/navbar.controller.js"></script>
+</body>
+</html>
