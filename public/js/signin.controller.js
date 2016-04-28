@@ -53,7 +53,7 @@
           // on success
           function(decodedToken) {
             $log.info('Logged in!', decodedToken);
-            $state.go('library');
+            $state.go('checkin');
           },
           // on error
           function(err) {

@@ -22,9 +22,8 @@
         <div class="container">
           <a ui-sref="welcome" class="navbar-brand">TXT</a>
           <div class="pull-right">
-            <button ng-show="vm.authService.isLoggedIn();" ui-sref="library" type="button" class="btn btn-default navbar-btn">Library</button>
             <button ng-show="vm.authService.isLoggedIn();" ui-sref="profile" type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-cog"></i> Profile</button>
-            <button ng-hide="vm.authService.isLoggedIn();" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Check In</button>
+            <button ng-show="vm.authService.isLoggedIn();" ui-sref="checkin" type="button" class="btn btn-default navbar-btn navbar-right">Check In</button>
             <button ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
           </div>
         </div>
@@ -44,7 +43,7 @@
   <script src="/js/user.service.js"></script>
   <script src="/js/signin.controller.js"></script>
   <script src="/js/profile.controller.js"></script>
-  <script src="/js/library.controller.js"></script>
+  <script src="/js/checkin.controller.js"></script>
   <script src="/js/navbar.controller.js"></script>
 </body>
 </html>
