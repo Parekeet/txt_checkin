@@ -19,13 +19,15 @@
   <div class="container-fluid">
     <header ng-controller="NavbarController as vm">
       <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <a ui-sref="welcome" class="navbar-brand">TXT</a>
-          <div class="pull-right">
-            <button ng-show="vm.authService.isLoggedIn();" ui-sref="profile" type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-cog"></i> Profile</button>
-            <button ng-show="vm.authService.isLoggedIn();" ui-sref="checkin" type="button" class="btn btn-default navbar-btn navbar-right">Check In</button>
-            <button ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a ui-sref="signin" class="navbar-brand"><img src="assets/txt.png" alt=""></a>
           </div>
+          <ul class="nav navbar-nav pull-right">
+            <li><a ng-show="vm.authService.isLoggedIn();" ui-sref="profile"><i class="glyphicon glyphicon-cog"></i> Profile</a></li>
+            <li><a ng-show="vm.authService.isLoggedIn();" ui-sref="checkin">Check In</a></li>
+            <li><a ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn()">Sign out</a></li>
+          </ul>
         </div>
       </nav>
     </header>
