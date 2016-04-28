@@ -10,7 +10,7 @@
   function appRoutes($urlRouterProvider, $stateProvider) {
     $stateProvider
       .state("signin", {
-        url:          "/welcome",
+        url:          "/",
         templateUrl:  "/js/welcome.html",
         controller:   "SignInController",
         controllerAs: "vm"
@@ -22,10 +22,10 @@
         controllerAs: "vm",
         authorized:   true
       })
-      .state("library", {
-        url:          "/library",
-        templateUrl:  "/js/library.html",
-        controller:   "LibraryController",
+      .state("checkin", {
+        url:          "/checkin",
+        templateUrl:  "/js/checkin.html",
+        controller:   "CheckInController",
         controllerAs: "vm",
         authorized:   true
       });

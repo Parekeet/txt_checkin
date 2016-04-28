@@ -21,7 +21,7 @@
     // services to their bare-minimum.
     function logOut() {
       authService.logOut();
-      $state.go('welcome');
+      $state.go('signin');
     }
 
     $log.info("NavbarController loaded!");
